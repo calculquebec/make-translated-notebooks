@@ -92,6 +92,9 @@ def make_nodebooks(src_file: str, lang: str, force_rebuild: bool = False):
 
     for version, attrib in versions.items():
         dir_name = f"{attrib['dir_prefix']}{lang}"
+        if not os.path.isdir(dir_name):
+            os.mkdir(dir_name)
+
         new_file = os.path.join(dir_name, os.path.basename(src_file))
 
         if os.path.isfile(new_file):
