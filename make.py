@@ -134,7 +134,7 @@ def make_all_nodebooks():
 
     args = arg_parser.parse_args()
 
-    for src_file in glob.glob('src/*'):
+    for src_file in glob.glob('src/*.ipynb'):
         nb_cells = []
 
         for lang in languages:
