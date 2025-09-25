@@ -102,7 +102,7 @@ def make_nodebooks(src_file: str, lang: str, force_rebuild: bool = False):
         else:
             new_mtime = 0.0
 
-        if (new_mtime < os.path.getmtime(src_file)) or force_rebuild:
+        if (new_mtime <= os.path.getmtime(src_file)) or force_rebuild:
             nb_cells[version] = make_nodebook(
                 src_file,
                 new_file,
